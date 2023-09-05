@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crear Gol</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><a href="/">Listado Goles</a></h1>
+    <h1>Crear Gol</h1>
+    <form action="/goles/create" method="POST">
+        <div>
+            <label for="">Numero de gol</label>
+            <input type="number" name="num" required>
+        </div>
+        <div>
+            <label for="">Equipo</label>
+            <select name="equipo">
+                <% for (let i = 0; i < equipos.length; i++) { %>
+                    <option value="<%= equipos[i].id %>">
+                        <%= equipos[i].name %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <label for="">Rival</label>
+            <select name="rival">
+                <% for (let i = 0; i < rivales.length; i++) { %>
+                    <option value="<%= rivales[i].id %>">
+                        <%= rivales[i].name %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <label for="">Competicion</label>
+            <select name="competicion">
+                <% for (let i = 0; i < competiciones.length; i++) { %>
+                    <option value="<%= competiciones[i].id %>">
+                        <%= competiciones[i].name %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <label for="">Anio</label>
+            <select name="anio">
+                <% for (let i = 0; i < anios.length; i++) { %>
+                    <option value="<%= anios[i].id %>">
+                        <%= anios[i].anio %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <label for="">Tipo de gol</label>
+            <select name="tipoDeGol">
+                <% for (let i = 0; i < tipoDeGoles.length; i++) { %>
+                    <option value="<%= tipoDeGoles[i].id %>">
+                        <%= tipoDeGoles[i].name %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <label for="">Link del gol</label>
+            <input type="text" name="link" required>
+        </div>
+        <button type="submit">Crear</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessiGoals</title>
+    <link rel='stylesheet' href='/stylesheets/homePage.css' />
+    <link rel='stylesheet' href='/stylesheets/banner.css' />
+  </head>
+  <body>
+
+    <%- include('./partials/nav') %>
+
+    <div class="main-image">
+      <% if (competicionId.competicion == "Champions League") { %>
+        <img src="/images/banners/messi-banner-champions-2.jpg">
+      <% } %>
+      <% if (competicionId.competicion == "Copa del Rey") { %>
+        <img src="/images/banners/messi-banner-copadelrey-1.jpg">
+      <% } %>
+      <% if (competicionId.competicion == "Mundial") { %>
+        <img src="/images/banners/messi-banner-argentina-2-edit.jpg">
+      <% } %>
+      <% if (competicionId.competicion == "Amistoso" || competicionId.competicion == "Eliminatorias") { %>
+        <img src="/images/banners/messi-banner-argentina-6.png">
+      <% } %>
+      <% if (competicionId.competicion == "Copa América") { %>
+        <img src="/images/banners/copa-aamerica-2.-editjpg.jpg">
+      <% } %>
+      <% if (competicionId.competicion != "Champions League" && competicionId.competicion != "Mundial" && competicionId.competicion != "Amistoso" && competicionId.competicion != "Eliminatorias" && competicionId.competicion != "Copa América" && competicionId.competicion != "Copa del Rey") { %>
+        <img src="/images/banners/messi-banner-8.jpg">
+      <% } %>
+    </div>
+
+    <% if (locals.golesCompeticion <= 0) { %>
+      <div class="div-h1">
+        <h1 class="goles-h1">No hay goles en esa competicion</h1>
+      </div>
+    <%  } else { %>
+        <% for (let i = 0; i < 1; i++) { %>
+        <div class="div-h1">
+          <h1 class="goles-h1">Goles en <%= golesCompeticion[i].competicion.competicion %>: <%= golesCompeticion.length %></h1>
+        </div>
+        <% } %>
+    <% } %>
+
+    <ul class="goles-ul">
+        <% let num = 1 %>
+        <% for (let i = 0; i < golesCompeticion.length; i++) { %>
+            <div class="div-li">
+              <li>
+                <a href="<%= golesCompeticion[i].link %>" target="_blank"><%= num %>) <%= golesCompeticion[i].equipo.equipo %> vs <%= golesCompeticion[i].rival.rival %> / <%= golesCompeticion[i].competicion.competicion %> / <%= golesCompeticion[i].anio.anio %></a>
+              </li>
+            </div>
+            <% num++ %>            
+        <% } %>
+    </ul>
+
+  </body>
+</html>

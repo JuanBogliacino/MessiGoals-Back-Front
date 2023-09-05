@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessiGoals</title>
+    <link rel='stylesheet' href='/stylesheets/homePage.css' />
+    <link rel='stylesheet' href='/stylesheets/cssPartials/mobile.css' />
+  </head>
+  <body>
+
+    <%- include('../partials/nav.ejs') %>
+    
+    <ul class="mobile-ul">
+      <% for (let i = 0; i < rivales.length; i++) { %>
+          <div class="mobile-div-li">
+              <li>
+                <a href="/goles/rival/<%= rivales[i].id %>"><%= rivales[i].rival %></a>
+              </li>
+          </div>
+      <% } %>
+  </ul>
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.main-image {
+    height: 230px;
+    display: flex;
+}
+
+.main-image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    
+}
+
+@media (min-width: 450px) {
+    .main-image {
+        height: 300px;
+    }
+}
+
+@media (min-width: 760px) {
+    .main-image {
+        height: 500px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .main-image {
+        height: 600px;
+    }
+  }

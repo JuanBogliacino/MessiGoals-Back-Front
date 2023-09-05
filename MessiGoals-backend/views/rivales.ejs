@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessiGoals</title>
+    <link rel='stylesheet' href='/stylesheets/homePage.css' />
+  </head>
+  <body>
+
+    <%- include('./partials/nav') %>
+
+    <% if (locals.golesRival <= 0) { %>
+      <div class="div-h1">
+        <h1 class="goles-h1">No hay goles contra ese equipo</h1>
+      </div>
+    <%  } else { %>
+        <% for (let i = 0; i < 1; i++) { %>
+          <div class="div-h1">
+            <h1 class="goles-h1">Goles contra <%= golesRival[i].rival.rival %>: <%= golesRival.length %></h1>
+          </div>
+        <% } %>
+    <% } %>
+
+    <ul class="goles-ul">
+        <% let num = 1 %>
+        <% for (let i = 0; i < golesRival.length; i++) { %>
+            <div class="div-li">
+              <li>
+                <a href="<%= golesRival[i].link %>" target="_blank"><%= num %>) <%= golesRival[i].equipo.equipo %> vs <%= golesRival[i].rival.rival %> / <%= golesRival[i].competicion.competicion %> / <%= golesRival[i].anio.anio %></a>
+              </li>
+            </div>
+            <% num++ %>
+        <% } %>
+    </ul>
+
+  </body>
+</html>

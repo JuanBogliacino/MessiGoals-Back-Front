@@ -1,0 +1,305 @@
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #1f22d3;
+    border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(25, 16, 156);
+}
+
+.nav-mobile {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #ac2121;
+    background-color: #172d8d;
+    border-bottom: 2px solid #d31f1f;
+    border-bottom: 2px solid #2843b9;
+}
+
+.menu-filtrar {
+    font-family: 'Oswald', sans-serif;
+    padding: 2px 5px;
+    /* border-radius: 3px; */
+}
+
+.menu-filtrar:hover {
+    cursor: pointer;
+}
+
+.MessiGoals {
+    text-shadow: 2px 2px #000;
+    padding: 2px 5px;
+    font-style: italic;
+}
+
+.transparente {
+    padding: 2px 20px;
+}
+
+.menu-mobile {
+    box-shadow: 7px 0px #172d8d;
+    padding: 5px;
+    background-color: #2843b9;
+    /* border: 2px solid #172d8d; */
+    border-top: 1px solid #2843b9;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    /* top: -500px; */
+}
+
+.menu-mobile ul {
+    list-style: none;
+}
+
+.menu-mobile li {
+    margin: 10px 5px;
+    padding: 5px;
+}
+
+.menu-mobile li:hover {
+    background-color: #ac2121;
+    background-color: #172d8d;
+    border-radius: 10px;
+}
+
+.menu-mobile li a {
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav ul {
+    display: none;
+}
+
+.menu-equipos {
+    position: absolute;
+    top: -500px;
+}
+
+.menu-competicion {
+    position: absolute;
+    top: -500px;
+}
+
+.menu-anio {
+    position: absolute;
+    top: -500px;
+}
+
+.menu-rival {
+    position: absolute;
+    top: -5000px;
+}
+
+.menu-tipoDeGol {
+    position: absolute;
+    top: -500px;
+}
+
+.invisible {
+    display: none;
+}
+
+@media (min-width: 760px) {
+    .nav-mobile {
+        display: none;
+    }
+
+    .nav {
+        height: 35px;
+    }
+    
+    .nav ul {
+        height: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 0px 5px;
+        background-color: #ac2121;
+        background-color: #172d8d;
+        border-bottom: 2px solid #d31f1f;
+        border-bottom: 2px solid #2843b9;
+    }
+
+    .nav ul li {
+        color: #fff;
+        margin-right: 70px;
+        /* font-size: 15px;
+        font-family: 'Anton', sans-serif; */
+        font-style: italic;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .nav ul li:hover {
+        cursor: pointer;
+        opacity: .8;
+    }
+
+    .li-total a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .oculto {
+        display: none;
+    }
+
+    .menu-equipos {
+        background-color: #d31f1f;
+        background-color: #2843b9;
+        background-color: #2843b9;
+        width: min-content;
+        position: absolute;
+        top: 33px;
+        left: 87px;
+        z-index: 999;
+    }
+
+    .menu-equipos ul {
+        list-style: none;
+    }
+
+    .menu-equipos ul li {
+        padding: 7px 5px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .menu-equipos ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .menu-equipos ul li:hover {
+        background-color: #ac2121;
+        background-color: #172d8d;
+    }
+
+    .menu-competicion {
+        background-color: #d31f1f;
+        background-color: #2843b9;
+        position: absolute;
+        top: 33px;
+        left: 180px;
+        z-index: 999;
+        font-size: 14px;
+    }
+
+    .menu-competicion ul {
+        list-style: none;
+    }
+
+    .menu-competicion ul li {
+        padding: 7px 5px;
+        text-align: center;
+    }
+
+    .menu-competicion ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .menu-competicion ul li:hover {
+        background-color: #ac2121;
+        background-color: #172d8d;
+    }
+
+    .menu-anio {
+        background-color: #d31f1f;
+        background-color: #2843b9;
+        position: absolute;
+        width: 50px;
+        top: 33px;
+        left: 370px;
+        z-index: 999;
+    }
+
+    .menu-anio ul {
+        list-style: none;
+    }
+
+    .menu-anio ul li {
+        padding: 7px 5px;
+        text-align: center;
+    }
+
+    .menu-anio ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .menu-anio ul li:hover {
+        background-color: #ac2121;
+        background-color: #172d8d;
+    }
+
+    .menu-rival {
+        background-color: #d31f1f;
+        background-color: #2843b9;
+        position: absolute;
+        top: 33px;
+        left: 430px;
+        z-index: 999;
+    }
+
+    .menu-rival ul {
+        list-style: none;
+    }
+
+    .menu-rival ul li {
+        padding: 7px 5px;
+        text-align: center;
+        font-size: 13.5px;
+    }
+
+    .menu-rival ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .menu-rival ul li:hover {
+        background-color: #ac2121;
+        background-color: #172d8d;
+    }
+
+    .menu-tipoDeGol {
+        background-color: #d31f1f;
+        background-color: #2843b9;
+        position: absolute;
+        width: 70px;
+        top: 33px;
+        left: 590px;
+        z-index: 999;
+    }
+
+    .menu-tipoDeGol ul {
+        list-style: none;
+    }
+
+    .menu-tipoDeGol ul li {
+        padding: 7px 5px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .menu-tipoDeGol ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .menu-tipoDeGol ul li:hover {
+        background-color: #ac2121;
+        background-color: #172d8d;
+    }
+}

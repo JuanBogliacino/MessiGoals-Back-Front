@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/stylesheets/cssPartials/nav.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Dosis:wght@200&family=IBM+Plex+Sans:ital,wght@1,200&family=M+PLUS+1+Code:wght@300&family=Oswald&family=Poppins:wght@300&family=Roboto:wght@300&family=Rubik:wght@500&family=Shippori+Antique&display=swap" rel="stylesheet">
+<header>
+    <nav>
+        <ul class="nav-mobile oculto">
+            <li class="menu-filtrar">Filtrar</li>
+            <li class="MessiGoals"><h1>Messi Goals</h1></li>
+            <li class="transparente"></li>
+        </ul>
+    </nav>
+
+    <div class="menu-mobile oculto invisible">
+        <ul>
+            <li><a href="/">Total</a></li>
+            <% for (let i = 0; i < equipos.length; i++) { %>
+                <li><a href="/goles/equipo/<%= equipos[i].id %>"><%= equipos[i].equipo %></a></li>
+            <% } %>
+            <li><a href="/goles/mobile/competicion">Competicion</a></li>
+            <li><a href="/goles/mobile/anio">Temporada</a></li>
+            <li><a href="/goles/mobile/rival">Rival</a></li>
+            <% for (let i = 0; i < tipoDeGoles.length; i++) { %>
+                <% if (tipoDeGoles[i].tipoDeGol != "normal") { %>
+                    <li><a href="/goles/tipoDeGol/<%= tipoDeGoles[i].id %>"><%= tipoDeGoles[i].tipoDeGol %></a></li>
+                <% } %>
+            <% } %>
+        </ul>
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li class="li-total"><a href="/">Total</a></li>
+            <li class="li-equipos">Equipos</li>
+            <li class="li-competicion">Competicion</li>
+            <li class="li-anio">Temporada</li>
+            <li class="li-rival">Rival</li>
+            <li class="li-tipoDeGol">tipo de gol</li>
+        </ul>
+    </nav>
+
+    <div class="menu-equipos oculto">
+        <ul>
+            <% for (let i = 0; i < equipos.length; i++) { %>
+                <li><a href="/goles/equipo/<%= equipos[i].id %>"><%= equipos[i].name %></a></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="menu-competicion oculto">
+        <ul>
+            <% for (let i = 0; i < competiciones.length; i++) { %>
+                <li><a href="/goles/competicion/<%= competiciones[i].id %>"><%= competiciones[i].name %></a></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="menu-anio oculto">
+        <ul>
+            <% for (let i = 0; i < anios.length; i++) { %>
+                <li><a href="/goles/anio/<%= anios[i].id %>"><%= anios[i].anio %></a></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="menu-rival oculto">
+        <ul>
+            <% for (let i = 0; i < rivales.length; i++) { %>
+                <li><a href="/goles/rival/<%= rivales[i].id %>"><%= rivales[i].name %></a></li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div class="menu-tipoDeGol oculto">
+        <ul>
+            <% for (let i = 0; i < tipoDeGoles.length; i++) { %>
+                <% if (tipoDeGoles[i].name != "normal") { %>
+                    <li><a href="/goles/tipoDeGol/<%= tipoDeGoles[i].id %>"><%= tipoDeGoles[i].name %></a></li>
+                <% } %>
+            <% } %>
+        </ul>
+    </div>
+
+</header>
+<script src="/javascripts/nav.js"></script>

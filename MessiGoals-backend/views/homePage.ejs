@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessiGoals</title>
+    <link rel='stylesheet' href='/stylesheets/homePage.css' />
+  </head>
+  <body>
+
+    <%- include('./partials/nav') %>
+
+    <div class="banner-slider">
+      <ul>
+          <li>
+              <img src="/images/banners/messi-banner-1.jpg">
+          </li>
+          <li>
+              <img src="/images/banners/messi-banner-4.jpg">
+          </li>
+          <li>
+              <img src="/images/banners/messi-banner-7.jpg">
+          </li>
+          <li>
+              <img src="/images/banners/messi-banner-8.jpg">
+          </li>
+      </ul>
+  </div>
+
+  <div class="div-h1">
+    <h1 class="goles-h1">Goles en total: <%= goles.length %></h1>
+  </div>
+
+  <ul class="goles-ul">
+      <% for (let i = 0; i < goles.length; i++) { %>
+          <div class="div-li">
+            <li>
+              <a href="<%= goles[i].link %>" target="_blank"><%= goles[i].num %>) <%= goles[i].equipo.name %> vs <%= goles[i].rival.name %> / <%= goles[i].competicion.name %> / <%= goles[i].anio.anio %></a>
+           </li>
+          </div>            
+      <% } %>
+  </ul> 
+
+    <!-- <h1><a href="/goles/create">Crear Gol</a></h1> -->
+
+  </body>
+</html>

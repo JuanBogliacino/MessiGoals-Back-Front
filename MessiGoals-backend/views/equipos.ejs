@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessiGoals</title>
+    <link rel='stylesheet' href='/stylesheets/homePage.css' />
+    <link rel='stylesheet' href='/stylesheets/banner.css' />
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+
+    <% if (equipoId.equipo == "Barcelona") { %>
+      <div class="banner-slider">
+        <ul>
+            <li>
+                <img src="/images/banners/messi-banner-1.jpg">
+            </li>
+            <li>
+                <img src="/images/banners/messi-banner-4.jpg">
+            </li>
+            <li>
+                <img src="/images/banners/messi-banner-7.jpg">
+            </li>
+            <li>
+                <img src="/images/banners/messi-banner-8.jpg">
+            </li>
+        </ul>
+    </div>
+    <% } %>
+
+    <% if (equipoId.equipo == "Argentina") { %>
+      <div class="banner-slider">
+        <ul>
+            <li>
+                <img src="/images/banners/messi-banner-argentina-2.jpg">
+            </li>
+            <li>
+              <img src="/images/banners/messi-banner-argentina-6.png">
+            </li>
+            <li>
+                <img src="/images/banners/messi-banner-argentina-1.jpg">
+            </li>
+            <li>
+                <img src="/images/banners/messi-banner-argentina-5.jpg">
+            </li>
+        </ul>
+    </div>
+    <% } %>
+
+    <!-- <div class="main-image">
+      <% if (equipoId.equipo == "PSG") { %>
+        <img src="https://www.pasionfutbol.com/__export/1632918743571/sites/pasionfutbol/img/2021/09/29/gooool_messi_psg.jpg_960850000.jpg">
+      <% } %>
+    </div> -->
+
+    <% if (locals.golesEquipo <= 0) { %>
+      <div class="div-h1">
+        <h1 class="goles-h1">No hay goles con ese equipo</h1>
+      </div>
+    <%  } else { %>
+        <% for (let i = 0; i < 1; i++) { %>
+        <div class="div-h1">
+          <h1 class="goles-h1">Goles con <%= golesEquipo[i].equipo.equipo %>: <%= golesEquipo.length %></h1>
+        </div>
+        <% } %>
+    <% } %>
+
+    <ul class="goles-ul">
+        <% let num = 1 %>
+        <% for (let i = 0; i < golesEquipo.length; i++) { %>
+          <div class="div-li">
+            <li>
+              <a href="<%= golesEquipo[i].link %>" target="_blank"><%= num %>) <%= golesEquipo[i].equipo.equipo %> vs <%= golesEquipo[i].rival.rival %> / <%= golesEquipo[i].competicion.competicion %> / <%= golesEquipo[i].anio.anio %></a>
+            </li>
+          </div>
+            <% num++ %>            
+        <% } %>
+    </ul>
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessiGoals</title>
+    <link rel='stylesheet' href='/stylesheets/homePage.css' />
+    <link rel='stylesheet' href='/stylesheets/banner.css' />
+  </head>
+  <body>
+
+    <%- include('./partials/nav') %>
+
+    <div class="main-image">
+      <% if (tipoDeGolId.tipoDeGol == "penal") { %>
+        <img src="/images/banners/tipoDeGol/messi-banner-penal-1-edit.jpg">
+      <% } %>
+      <% if (tipoDeGolId.tipoDeGol == "tiro libre") { %>
+        <img src="/images/banners/tipoDeGol/messi-banner-tirolibre-1.jpg">
+      <% } %>
+      <% if (tipoDeGolId.tipoDeGol == "cabeza") { %>
+        <img src="/images/banners/messi-banner-champions-1.jpg">
+      <% } %>
+    </div>
+
+    <% if (locals.golesTipoDeGol <= 0) { %>
+      <div class="div-h1">
+        <h1 class="goles-h1">No hay goles de ese tipo</h1>
+      </div>
+    <%  } else { %>
+        <% for (let i = 0; i < 1; i++) { %>
+          <div class="div-h1">
+            <h1 class="goles-h1">Goles de <%= golesTipoDeGol[i].tipoDeGol.tipoDeGol %>: <%= golesTipoDeGol.length %></h1>
+          </div>
+        <% } %>
+    <% } %>
+
+    <ul class="goles-ul">
+        <% let num = 1 %>
+        <% for (let i = 0; i < golesTipoDeGol.length; i++) { %>
+            <div class="div-li">
+              <li>
+                <a href="<%= golesTipoDeGol[i].link %>" target="_blank"><%= num %>) <%= golesTipoDeGol[i].equipo.equipo %> vs <%= golesTipoDeGol[i].rival.rival %> / <%= golesTipoDeGol[i].competicion.competicion %> / <%= golesTipoDeGol[i].anio.anio %></a>
+              </li>
+            </div>
+            <% num++ %>            
+        <% } %>
+    </ul>
+
+  </body>
+</html>

@@ -1,0 +1,145 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e2e2e;
+    min-width: 380px;
+    color: #fff;
+}
+
+.banner-slider{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  .banner-slider ul{
+      display: flex;
+      animation: cambio 20s infinite alternate linear;
+      width: 400%;
+  }
+  .banner-slider li{
+      width: 100%;
+      list-style: none;
+  }
+  .banner-slider img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* transform: translateY(-10%); */
+  }
+
+  @keyframes cambio{
+      0%{margin-left: 0;}
+      20%{margin-left: 0;}
+      
+      25%{margin-left: -100%;}
+      45%{margin-left: -100%;}
+      
+      50%{margin-left: -200%;}
+      70%{margin-left: -200%;}
+      
+      75%{margin-left: -300%;}
+      100%{margin-left: -300%;}
+  }
+
+  .div-h1 {
+    background-color: #c93232;
+    background-color: #1f37a0;
+    padding: 7px 10px;
+  }
+
+  .goles-h1 {
+    font-size: 20px;
+    text-shadow: 2px 2px #000;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .goles-ul {
+    margin: 10px auto;
+    background-color: #a32121;
+    background-color: #33363d;
+    width: max-content;
+    padding: 5px;
+    list-style: none;
+    box-shadow: 10px 10px #000;
+  }
+
+  .goles-ul .div-li {
+    background-color: #2e2e2e;
+  }
+
+  .goles-ul li {
+    margin: 10px 5px;
+    padding: 5px;
+  }
+
+  .goles-ul li a {
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  .goles-ul li a:hover {
+
+  }
+  
+  @media (min-width: 450px) {
+    .banner-slider{
+        height: 300px;
+      }
+
+    .goles-h1 {
+    font-size: 25px;
+  }
+
+  .goles-ul li {
+    margin: 10px 5px;
+    padding: 10px 5px;
+  }
+
+.goles-ul li a {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 760px) {
+    .banner-slider{
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .banner-slider img {
+        transform: translateY(-5%);
+    }
+
+    .goles-h1 {
+      font-size: 30px;
+    }
+
+    .goles-ul {
+      width: 700px;
+      
+    }
+
+    .goles-ul li a {
+        font-size: 18px;
+    }
+
+    .goles-ul li a:hover {
+      /* color: #c93232; */
+      font-weight: bold;
+      text-shadow: 1px 1px #000;
+    }
+}
+
+@media (min-width: 1400px) {
+  .banner-slider{
+    height: 600px;
+}
+}
